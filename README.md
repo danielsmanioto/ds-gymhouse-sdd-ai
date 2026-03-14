@@ -242,6 +242,28 @@ Os diagramas também foram exportados para imagem em `specs/04-diagrams/`:
 - Módulos: [PNG](specs/04-diagrams/ds-gym-house-modules.png) | [JPG](specs/04-diagrams/ds-gym-house-modules.jpg)
 - Jornada do usuário: [PNG](specs/04-diagrams/ds-gym-house-user-journey.png) | [JPG](specs/04-diagrams/ds-gym-house-user-journey.jpg)
 
+### Visualização dos diagramas
+
+#### Arquitetura (base)
+
+![Arquitetura base do DS Gym House](specs/04-diagrams/ds-gym-house-architecture.png)
+
+#### Arquitetura (produção)
+
+![Arquitetura de produção do DS Gym House](specs/04-diagrams/ds-gym-house-architecture-production.png)
+
+#### Contexto do sistema
+
+![Contexto do sistema DS Gym House](specs/04-diagrams/ds-gym-house-context.png)
+
+#### Módulos conceituais
+
+![Módulos conceituais do DS Gym House](specs/04-diagrams/ds-gym-house-modules.png)
+
+#### Jornada do usuário
+
+![Jornada do usuário do DS Gym House](specs/04-diagrams/ds-gym-house-user-journey.png)
+
 ## Estado atual do projeto
 
 Neste momento, o projeto já possui uma base SDD consistente para seguir para modelagem técnica e implementação.
