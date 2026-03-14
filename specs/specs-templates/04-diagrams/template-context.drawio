@@ -1,0 +1,19 @@
+<mxfile host="app.diagrams.net" modified="2026-03-14T13:00:00.000Z" agent="GitHub Copilot" version="24.7.17">
+  <diagram id="template-context" name="Template Context">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="actor1" value="{{Actor 1}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1"><mxGeometry x="80" y="180" width="150" height="60" as="geometry"/></mxCell>
+        <mxCell id="actor2" value="{{Actor 2}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1"><mxGeometry x="80" y="320" width="150" height="60" as="geometry"/></mxCell>
+        <mxCell id="system" value="{{Project Name}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=15;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="420" y="240" width="240" height="90" as="geometry"/></mxCell>
+        <mxCell id="dep1" value="{{Dependency 1}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;" vertex="1" parent="1"><mxGeometry x="830" y="180" width="170" height="60" as="geometry"/></mxCell>
+        <mxCell id="dep2" value="{{Dependency 2}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" vertex="1" parent="1"><mxGeometry x="830" y="320" width="170" height="60" as="geometry"/></mxCell>
+        <mxCell id="e1" value="{{interaction}}" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="actor1" target="system"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="{{interaction}}" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="actor2" target="system"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="{{uses}}" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="system" target="dep1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="{{uses}}" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;" edge="1" parent="1" source="system" target="dep2"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

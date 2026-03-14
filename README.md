@@ -144,11 +144,19 @@ O repositório é organizado para separar claramente **especificações, código
    │   │   └── spec.md
    │   └── workout-catalog/
    │       └── spec.md
-   └── 04-diagrams/
+   ├── 04-diagrams/
       ├── README.md
       ├── ds-gym-house-context.drawio
       ├── ds-gym-house-modules.drawio
       └── ds-gym-house-user-journey.drawio
+   
+   └── specs-templates/
+      ├── README.md
+      ├── 00-product-vision/
+      ├── 01-discovery/
+      ├── 02-requirements/
+      ├── 03-features/
+      └── 04-diagrams/
 ```
 
 ## Passo a passo da organização SDD
@@ -219,6 +227,7 @@ Com essa base, o próximo ciclo natural do SDD pode seguir esta ordem:
 - Requirements: `specs/02-requirements/`
 - Features detalhadas: `specs/03-features/`
 - Diagramas draw.io: `specs/04-diagrams/`
+- Templates reutilizáveis: `specs/specs-templates/`
 
 ## Estado atual do projeto
 
