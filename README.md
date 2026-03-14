@@ -253,3 +253,7 @@ A partir daqui, os próximos passos mais naturais são:
 - escrever especificações técnicas por endpoint;
 - preparar backlog de implementação por feature;
 - derivar testes a partir dos critérios de aceitação.
+
+## Plano de implementação
+
+O plano executável para finalizar a v1 está em [TODO.md](TODO.md).
