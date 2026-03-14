@@ -232,6 +232,16 @@ Com essa base, o próximo ciclo natural do SDD pode seguir esta ordem:
 - Diagramas draw.io: `specs/04-diagrams/`
 - Templates reutilizáveis: `specs/specs-templates/`
 
+## Diagramas exportados (PNG/JPG)
+
+Os diagramas também foram exportados para imagem em `specs/04-diagrams/`:
+
+- Arquitetura (base): [PNG](specs/04-diagrams/ds-gym-house-architecture.png) | [JPG](specs/04-diagrams/ds-gym-house-architecture.jpg)
+- Arquitetura (produção): [PNG](specs/04-diagrams/ds-gym-house-architecture-production.png) | [JPG](specs/04-diagrams/ds-gym-house-architecture-production.jpg)
+- Contexto: [PNG](specs/04-diagrams/ds-gym-house-context.png) | [JPG](specs/04-diagrams/ds-gym-house-context.jpg)
+- Módulos: [PNG](specs/04-diagrams/ds-gym-house-modules.png) | [JPG](specs/04-diagrams/ds-gym-house-modules.jpg)
+- Jornada do usuário: [PNG](specs/04-diagrams/ds-gym-house-user-journey.png) | [JPG](specs/04-diagrams/ds-gym-house-user-journey.jpg)
+
 ## Estado atual do projeto
 
 Neste momento, o projeto já possui uma base SDD consistente para seguir para modelagem técnica e implementação.
