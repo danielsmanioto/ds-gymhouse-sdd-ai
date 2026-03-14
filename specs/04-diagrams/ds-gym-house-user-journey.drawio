@@ -1,0 +1,21 @@
+<mxfile host="app.diagrams.net" modified="2026-03-14T12:30:00.000Z" agent="GitHub Copilot" version="24.7.17">
+  <diagram id="gymhouse-journey" name="User Journey">
+    <mxGraphModel dx="1280" dy="720" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="j1" value="Acessar plataforma" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" vertex="1" parent="1"><mxGeometry x="40" y="180" width="170" height="60" as="geometry"/></mxCell>
+        <mxCell id="j2" value="Explorar catálogo" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1"><mxGeometry x="260" y="180" width="170" height="60" as="geometry"/></mxCell>
+        <mxCell id="j3" value="Selecionar treino" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" vertex="1" parent="1"><mxGeometry x="480" y="180" width="170" height="60" as="geometry"/></mxCell>
+        <mxCell id="j4" value="Executar treino guiado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" vertex="1" parent="1"><mxGeometry x="700" y="180" width="180" height="60" as="geometry"/></mxCell>
+        <mxCell id="j5" value="Registrar conclusão" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;" vertex="1" parent="1"><mxGeometry x="930" y="180" width="180" height="60" as="geometry"/></mxCell>
+        <mxCell id="j6" value="Acompanhar progresso" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1"><mxGeometry x="1160" y="180" width="180" height="60" as="geometry"/></mxCell>
+        <mxCell id="je1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#6c8ebf;" edge="1" parent="1" source="j1" target="j2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="je2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#82b366;" edge="1" parent="1" source="j2" target="j3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="je3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#d6b656;" edge="1" parent="1" source="j3" target="j4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="je4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#9673a6;" edge="1" parent="1" source="j4" target="j5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="je5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#b85450;" edge="1" parent="1" source="j5" target="j6"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
