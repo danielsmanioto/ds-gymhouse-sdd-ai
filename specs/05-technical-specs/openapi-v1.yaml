@@ -1,0 +1,617 @@
+openapi: 3.0.3
+info:
+  title: DS Gym House API
+  version: 1.0.0
+  description: |
+    OpenAPI v1 da plataforma DS Gym House.
+    Baseado em `api-contracts-v1.md`.
+servers:
+  - url: /api/v1
+    description: Base path v1
+
+tags:
+  - name: Auth
+  - name: Workouts
+  - name: Progress
+  - name: Admin
+
+paths:
+  /auth/register:
+    post:
+      tags: [Auth]
+      summary: Criar conta de aluno
+      operationId: registerUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+      responses:
+        '201':
+          description: Usuário criado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '422':
+          description: E-mail já cadastrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                error:
+                  code: AUTH_EMAIL_ALREADY_EXISTS
+                  message: E-mail já cadastrado
+                  details: []
+
+  /auth/login:
+    post:
+      tags: [Auth]
+      summary: Autenticar usuário
+      operationId: loginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Login efetuado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          description: Credenciais inválidas
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                error:
+                  code: AUTH_INVALID_CREDENTIALS
+                  message: Credenciais inválidas
+                  details: []
+
+  /workouts:
+    get:
+      tags: [Workouts]
+      summary: Listar catálogo de treinos
+      operationId: listWorkouts
+      parameters:
+        - in: query
+          name: goal
+          schema:
+            type: string
+        - in: query
+          name: level
+          schema:
+            $ref: '#/components/schemas/WorkoutLevel'
+        - in: query
+          name: durationMax
+          schema:
+            type: integer
+            minimum: 1
+        - in: query
+          name: format
+          schema:
+            $ref: '#/components/schemas/WorkoutFormat'
+        - in: query
+          name: page
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - in: query
+          name: pageSize
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+      responses:
+        '200':
+          description: Lista de treinos
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkoutListResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+
+  /workouts/{workoutId}:
+    get:
+      tags: [Workouts]
+      summary: Obter detalhes do treino
+      operationId: getWorkoutById
+      parameters:
+        - $ref: '#/components/parameters/WorkoutId'
+      responses:
+        '200':
+          description: Detalhes do treino
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkoutDetailResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /workouts/{workoutId}/complete:
+    post:
+      tags: [Progress]
+      summary: Registrar conclusão de treino
+      operationId: completeWorkout
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/WorkoutId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkoutCompletionRequest'
+      responses:
+        '201':
+          description: Conclusão registrada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkoutCompletionResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          description: Regra de negócio violada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                error:
+                  code: BUSINESS_RULE_VIOLATION
+                  message: Conclusão duplicada para o mesmo registro
+                  details: []
+
+  /me/progress:
+    get:
+      tags: [Progress]
+      summary: Obter resumo e histórico do aluno autenticado
+      operationId: getMyProgress
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: query
+          name: from
+          schema:
+            type: string
+            format: date-time
+        - in: query
+          name: to
+          schema:
+            type: string
+            format: date-time
+        - in: query
+          name: page
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - in: query
+          name: pageSize
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+      responses:
+        '200':
+          description: Progresso do usuário
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MyProgressResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /admin/workouts:
+    post:
+      tags: [Admin]
+      summary: Cadastrar treino
+      operationId: createWorkout
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminCreateWorkoutRequest'
+      responses:
+        '201':
+          description: Treino criado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminWorkoutMutationResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '422':
+          description: Regra de negócio violada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /admin/workouts/{workoutId}:
+    put:
+      tags: [Admin]
+      summary: Atualizar treino
+      operationId: updateWorkout
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/WorkoutId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdminUpdateWorkoutRequest'
+      responses:
+        '200':
+          description: Treino atualizado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminWorkoutMutationResponse'
+        '400':
+          $ref: '#/components/responses/ValidationError'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '422':
+          description: Regra de negócio violada
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  parameters:
+    WorkoutId:
+      name: workoutId
+      in: path
+      required: true
+      schema:
+        type: string
+      description: Identificador do treino
+
+  responses:
+    ValidationError:
+      description: Erro de validação
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: VALIDATION_ERROR
+              message: Dados de entrada inválidos
+              details:
+                - field: format
+                  issue: valor fora do enum permitido
+    Unauthorized:
+      description: Não autenticado
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: UNAUTHORIZED
+              message: Token ausente ou inválido
+              details: []
+    Forbidden:
+      description: Sem permissão
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: FORBIDDEN
+              message: Sem permissão para recurso
+              details: []
+    NotFound:
+      description: Recurso não encontrado
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+          example:
+            error:
+              code: NOT_FOUND
+              message: Recurso não encontrado
+              details: []
+
+  schemas:
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message, details]
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: array
+              items:
+                type: object
+                additionalProperties: true
+
+    RegisterRequest:
+      type: object
+      required: [name, email, password]
+      properties:
+        name:
+          type: string
+          minLength: 2
+          maxLength: 120
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          minLength: 8
+          description: Deve conter pelo menos 1 letra e 1 número
+
+    UserResponse:
+      type: object
+      required: [id, name, email]
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+
+    LoginResponse:
+      type: object
+      required: [accessToken, tokenType, expiresIn]
+      properties:
+        accessToken:
+          type: string
+        tokenType:
+          type: string
+          example: Bearer
+        expiresIn:
+          type: integer
+          example: 3600
+
+    WorkoutFormat:
+      type: string
+      enum: [video, external_link, text]
+
+    WorkoutLevel:
+      type: string
+      enum: [iniciante, intermediario, avancado]
+
+    WorkoutListItem:
+      type: object
+      required: [id, title, goal, level, durationMinutes, format]
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        goal:
+          type: string
+        level:
+          $ref: '#/components/schemas/WorkoutLevel'
+        durationMinutes:
+          type: integer
+          minimum: 1
+        format:
+          $ref: '#/components/schemas/WorkoutFormat'
+
+    WorkoutListResponse:
+      type: object
+      required: [items, total, page, pageSize]
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkoutListItem'
+        total:
+          type: integer
+          minimum: 0
+        page:
+          type: integer
+          minimum: 1
+        pageSize:
+          type: integer
+          minimum: 1
+
+    WorkoutDetailResponse:
+      allOf:
+        - $ref: '#/components/schemas/WorkoutListItem'
+        - type: object
+          properties:
+            instructions:
+              type: string
+              nullable: true
+            contentUrl:
+              type: string
+              format: uri
+              nullable: true
+
+    WorkoutCompletionRequest:
+      type: object
+      required: [completedAt]
+      properties:
+        completedAt:
+          type: string
+          format: date-time
+
+    WorkoutCompletionResponse:
+      type: object
+      required: [completionId, workoutId, userId, completedAt]
+      properties:
+        completionId:
+          type: string
+        workoutId:
+          type: string
+        userId:
+          type: string
+        completedAt:
+          type: string
+          format: date-time
+
+    ProgressSummary:
+      type: object
+      required: [totalCompleted, lastCompletedAt]
+      properties:
+        totalCompleted:
+          type: integer
+          minimum: 0
+        lastCompletedAt:
+          type: string
+          format: date-time
+          nullable: true
+
+    ProgressHistoryItem:
+      type: object
+      required: [completionId, workoutId, title, completedAt]
+      properties:
+        completionId:
+          type: string
+        workoutId:
+          type: string
+        title:
+          type: string
+        completedAt:
+          type: string
+          format: date-time
+
+    MyProgressResponse:
+      type: object
+      required: [summary, history, page, pageSize]
+      properties:
+        summary:
+          $ref: '#/components/schemas/ProgressSummary'
+        history:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProgressHistoryItem'
+        page:
+          type: integer
+          minimum: 1
+        pageSize:
+          type: integer
+          minimum: 1
+
+    AdminCreateWorkoutRequest:
+      type: object
+      required: [title, goal, level, durationMinutes, format, category]
+      properties:
+        title:
+          type: string
+          minLength: 2
+          maxLength: 120
+        goal:
+          type: string
+        level:
+          $ref: '#/components/schemas/WorkoutLevel'
+        durationMinutes:
+          type: integer
+          minimum: 1
+        format:
+          $ref: '#/components/schemas/WorkoutFormat'
+        instructions:
+          type: string
+          nullable: true
+        contentUrl:
+          type: string
+          format: uri
+          nullable: true
+        category:
+          type: string
+
+    AdminUpdateWorkoutRequest:
+      type: object
+      minProperties: 1
+      properties:
+        title:
+          type: string
+          minLength: 2
+          maxLength: 120
+        goal:
+          type: string
+        level:
+          $ref: '#/components/schemas/WorkoutLevel'
+        durationMinutes:
+          type: integer
+          minimum: 1
+        format:
+          $ref: '#/components/schemas/WorkoutFormat'
+        instructions:
+          type: string
+          nullable: true
+        contentUrl:
+          type: string
+          format: uri
+          nullable: true
+        category:
+          type: string
+
+    AdminWorkoutMutationResponse:
+      type: object
+      required: [id, status]
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum: [published, updated]
