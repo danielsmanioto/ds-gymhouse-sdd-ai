@@ -6,6 +6,12 @@ Este diretório contém templates de **Spec-Driven Development (SDD)** para reap
 
 Use [QUICKSTART-10MIN.md](QUICKSTART-10MIN.md) para montar a base inicial em poucos minutos.
 
+Para fluxo express, use [QUICKSTART-5MIN.md](QUICKSTART-5MIN.md).
+
+Para validação do setup inicial, use [ONBOARDING-CHECKLIST.md](ONBOARDING-CHECKLIST.md).
+
+Para iniciar por um único arquivo mestre, use [PROJECT-SEED.md](PROJECT-SEED.md).
+
 ## Como usar
 
 1. Copie a pasta `specs/specs-templates` para o projeto novo.

@@ -9,6 +9,7 @@ Esta pasta concentra os artefatos de especificação do projeto.
 - `02-requirements/`: requisitos funcionais, não funcionais e histórias de usuário.
 - `03-features/`: especificações por funcionalidade.
 - `04-diagrams/`: diagramas de contexto, fluxo e arquitetura conceitual.
+- `05-technical-specs/`: contratos técnicos e definições implementáveis.
 - `specs-templates/`: templates reutilizáveis para outros projetos.
 
 ## Como usar
@@ -26,4 +27,5 @@ Esta pasta concentra os artefatos de especificação do projeto.
 - `02-requirements/` já possui requisitos funcionais, requisitos não funcionais e histórias de usuário.
 - `03-features/` já possui as primeiras features mapeadas para catálogo, treino guiado, gestão de conteúdo e progresso.
 - `04-diagrams/` já possui diagramas de contexto, jornada do usuário e módulos conceituais.
+- `05-technical-specs/` já possui contrato inicial de API v1.
 - `specs-templates/` já possui templates prontos de visão, discovery, requirements, features e diagramas.

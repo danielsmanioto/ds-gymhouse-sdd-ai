@@ -149,6 +149,9 @@ O repositório é organizado para separar claramente **especificações, código
       ├── ds-gym-house-context.drawio
       ├── ds-gym-house-modules.drawio
       └── ds-gym-house-user-journey.drawio
+   ├── 05-technical-specs/
+   │   ├── README.md
+   │   └── api-contracts-v1.md
    
    └── specs-templates/
       ├── README.md
