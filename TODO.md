@@ -19,7 +19,7 @@ Preparar a base de código e ambiente para desenvolvimento.
 ### Entregas
 
 - [x] Definir stack oficial (backend, frontend, banco)
-- [ ] Inicializar projeto backend
+- [x] Inicializar projeto backend
 - [ ] Inicializar projeto frontend
 - [ ] Configurar lint, formatter e scripts
 - [ ] Criar `.env.example`
@@ -39,7 +39,7 @@ Status: ✅ concluído
 
 #### Stack já definida (parcial)
 
-- Backend: Java + Spring Boot
+- Backend: Java 25 + Spring Boot
 - Frontend: React + Vite
 - Banco: PostgreSQL
 - ORM: Spring Data JPA (Hibernate)
@@ -56,6 +56,12 @@ Status: ✅ concluído
 
 - [ ] Aplicação sobe localmente com comando único
 - [ ] Banco disponível e conexão validada
+
+### Progresso técnico realizado
+
+- [x] Teste unitário de `HealthController` (método direto)
+- [x] Teste WebMvc de `GET /api/v1/health`
+- [x] Ajuste de ambiente de teste com H2 (`application-test.yml`)
 
 ---
 

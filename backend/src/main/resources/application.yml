@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ds-gym-house-backend
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/ds_gym_house}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:update}
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+server:
+  port: ${PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    org.springframework.security: INFO
+    org.hibernate.SQL: INFO
