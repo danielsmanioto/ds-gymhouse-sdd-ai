@@ -1,63 +1,98 @@
 # DS Gym House
 
-**DS Gym House** é um projeto criado para demonstrar o **Spec-Driven Development (SDD) na prática**.
+![Status](https://img.shields.io/badge/status-em%20evolu%C3%A7%C3%A3o-2563eb)
+![Method](https://img.shields.io/badge/m%C3%A9todo-Spec--Driven%20Development-7c3aed)
+![Backend](https://img.shields.io/badge/backend-Java%2025%20%7C%20Spring%20Boot%203.5.7-16a34a)
+![Frontend](https://img.shields.io/badge/frontend-React%20%2B%20Vite-0ea5e9)
+![Database](https://img.shields.io/badge/database-PostgreSQL-0f766e)
+![API](https://img.shields.io/badge/API-OpenAPI%20v1-f59e0b)
 
-O objetivo deste repositório é explorar como fluxos de desenvolvimento modernos assistidos por IA podem ser combinados com **especificações claras, automação e arquitetura limpa** para construir software de forma mais eficiente.
+**DS Gym House** é um repositório de referência para demonstrar **Spec-Driven Development (SDD) na prática**, combinando **especificações claras**, **arquitetura evolutiva** e **implementação assistida por IA** em um produto realista de treino guiado para academia em casa.
 
-Este projeto serve tanto como uma **plataforma de aprendizado** quanto como uma **implementação de referência** para desenvolvedores que desejam entender como **agentes de IA e desenvolvimento orientado por especificações** podem trabalhar juntos em um projeto real.
+O projeto funciona ao mesmo tempo como:
 
----
-
-# O que é Spec-Driven Development (SDD)?
-
-**Spec-Driven Development (SDD)** é uma abordagem de desenvolvimento de software em que as **funcionalidades são definidas por meio de especificações antes do início da implementação**.
-
-Em vez de começar diretamente pelo código, os desenvolvedores primeiro escrevem uma **especificação clara descrevendo o comportamento, as regras e os resultados esperados de uma funcionalidade**.
-
-A especificação se torna a **fonte única da verdade** do sistema.
-
-Nos fluxos modernos de desenvolvimento, o SDD pode ser combinado com **assistentes de código e agentes de IA** para gerar automaticamente partes da implementação com base nessas especificações.
+- referência de organização de produto e engenharia com SDD;
+- laboratório de experimentação com IA aplicada ao desenvolvimento;
+- base inicial para implementação de uma plataforma fitness digital.
 
 ---
 
-# Princípios Centrais do SDD
+## Sumário
 
-### 1. Especificação Primeiro
-As funcionalidades são descritas por meio de especificações antes que qualquer código seja escrito.
+- [Visão geral](#visão-geral)
+- [O que é SDD](#o-que-é-sdd)
+- [Princípios centrais](#princípios-centrais)
+- [Objetivos do projeto](#objetivos-do-projeto)
+- [História do sistema](#história-do-sistema)
+- [Como o SDD funciona neste projeto](#como-o-sdd-funciona-neste-projeto)
+- [Stack atual](#stack-atual)
+- [Estrutura do repositório](#estrutura-do-repositório)
+- [Organização SDD passo a passo](#organização-sdd-passo-a-passo)
+- [Artefatos principais](#artefatos-principais)
+- [Diagramas](#diagramas)
+- [Estado atual](#estado-atual)
+- [Próximos passos](#próximos-passos)
+- [Plano de implementação](#plano-de-implementação)
 
-### 2. Contratos Claros
-Cada funcionalidade define:
+## Visão geral
 
-- entradas
-- saídas
-- regras de negócio
-- comportamento esperado
+Em vez de começar pela implementação, o **DS Gym House** parte da especificação. A proposta é usar documentação de produto, requisitos, features, contratos de API e diagramas como base para decisões de arquitetura, geração de código, testes e evolução incremental.
 
-### 3. Amigável à Automação
-As especificações podem ser usadas por:
+Esse modelo reduz ambiguidade, melhora a comunicação entre produto e engenharia e facilita o uso de agentes de IA ao longo do ciclo de desenvolvimento.
 
-- agentes de IA
-- geração automatizada de testes
-- ferramentas de documentação
+## O que é SDD?
 
-### 4. Fonte Única da Verdade
-A especificação define como o sistema deve se comportar, ajudando a manter a consistência entre documentação, testes e implementação.
+**Spec-Driven Development (SDD)** é uma abordagem em que as funcionalidades são definidas por meio de especificações antes do início da implementação.
 
----
+Em vez de começar diretamente pelo código, o time descreve primeiro:
 
-# Objetivos do Projeto
+- comportamento esperado;
+- entradas e saídas;
+- regras de negócio;
+- validações;
+- critérios de aceitação.
+
+Com isso, a especificação passa a ser a **fonte única da verdade** do sistema e serve como base para documentação, testes e implementação.
+
+## Princípios centrais
+
+### 1. Especificação primeiro
+
+As funcionalidades são descritas antes de qualquer código ser escrito.
+
+### 2. Contratos claros
+
+Cada feature define com objetividade:
+
+- entradas;
+- saídas;
+- regras de negócio;
+- comportamento esperado.
+
+### 3. Amigável à automação
+
+As especificações podem ser consumidas por:
+
+- agentes de IA;
+- geração automatizada de testes;
+- documentação técnica;
+- validação de contratos.
+
+### 4. Fonte única da verdade
+
+A documentação de especificação orienta design, implementação e validação, reduzindo divergências entre áreas.
+
+## Objetivos do projeto
 
 Os principais objetivos do **DS Gym House** são:
 
-- Demonstrar o **Spec-Driven Development na prática**
-- Explorar **fluxos de desenvolvimento assistidos por IA**
-- Organizar funcionalidades usando **especificações claras**
-- Manter uma **arquitetura limpa e escalável**
-- Oferecer um **ambiente de aprendizado para experimentação**
+- demonstrar **Spec-Driven Development na prática**;
+- explorar **fluxos de desenvolvimento assistidos por IA**;
+- organizar funcionalidades com **especificações claras e rastreáveis**;
+- manter uma base com **arquitetura limpa e escalável**;
+- oferecer um **ambiente de aprendizado e referência** para outros projetos.
 
----
-
-# História do Sistema
+## História do sistema
 
 Imagine uma pessoa que quer cuidar da saúde, ganhar condicionamento físico ou manter uma rotina de exercícios, mas nem sempre consegue frequentar uma academia tradicional. Ela treina em casa, em horários variados, com equipamentos simples ou até mesmo apenas com o peso do corpo. Apesar da motivação, essa pessoa muitas vezes encontra dificuldades para organizar os treinos, acompanhar sua evolução e escolher conteúdos adequados para cada objetivo.
 
@@ -78,177 +113,164 @@ Do ponto de vista de negócio, o sistema atende tanto alunos quanto profissionai
 
 Em resumo, a história do **DS Gym House** é a de uma plataforma criada para transformar a casa do aluno em um ambiente de treino orientado, flexível e digital. O sistema conecta planejamento, conteúdo e acompanhamento para tornar a prática de exercícios mais acessível, organizada e motivadora.
 
-Essa visão será a base para a definição dos requisitos, fluxos de usuário, regras de negócio e especificações funcionais usando **Spec-Driven Development (SDD)**.
+Essa visão sustenta os requisitos, fluxos de usuário, regras de negócio e especificações funcionais do projeto.
 
----
+## Como o SDD funciona neste projeto
 
-# Como o SDD Funciona Neste Projeto
+O fluxo adotado neste repositório segue uma abordagem orientada por especificação:
 
-O fluxo utilizado neste repositório segue uma **abordagem orientada por especificação**:
+1. uma especificação é criada na pasta `specs/`;
+2. a especificação descreve funcionalidade, regras, contratos e respostas esperadas;
+3. assistentes de código e agentes de IA usam esse material para acelerar implementação e testes;
+4. desenvolvedores revisam, refinam e evoluem a solução.
 
-1. Uma especificação de funcionalidade é criada na pasta `specs/`.
-2. A especificação descreve:
-   - a funcionalidade
-   - o comportamento da API
-   - as regras de validação
-   - as respostas esperadas
-3. Assistentes de código com IA podem ler a especificação e ajudar a gerar:
-   - controllers
-   - services
-   - repositories
-   - testes
-4. Os desenvolvedores revisam, refinam e evoluem a implementação.
+Na prática, isso permite derivar a partir da especificação:
 
-Esse fluxo incentiva **melhor design, comunicação mais clara e iteração mais rápida**.
+- controllers;
+- services;
+- repositories;
+- testes automatizados;
+- contratos de API;
+- documentação técnica.
 
----
+## Stack atual
 
-# Estrutura do Projeto
+As decisões técnicas já registradas para a v1 são:
 
-O repositório é organizado para separar claramente **especificações, código-fonte e testes**.
+| Camada | Stack |
+| --- | --- |
+| Backend | Java 25 + Spring Boot 3.5.7 |
+| Frontend | React + Vite |
+| Banco de dados | PostgreSQL |
+| Persistência | Spring Data JPA (Hibernate) |
+| Autenticação | JWT + Refresh Token |
+| Contrato de API | OpenAPI v1 |
+| Testes backend | JUnit + Spring Boot Test + MockMvc + H2 |
 
-## Estrutura inicial proposta
+## Estrutura do repositório
+
+O repositório está organizado para separar claramente **produto**, **especificação**, **implementação** e **planejamento**.
 
 ```text
 .
 ├── README.md
+├── TODO.md
+├── backend/
+│   ├── README.md
+│   ├── pom.xml
+│   └── src/
 ├── docs/
 │   └── case-study/
 │       └── estudo-de-caso.md
 └── specs/
-   ├── README.md
-   ├── 00-product-vision/
-   │   ├── README.md
-   │   ├── escopo-inicial-e-premissas.md
-   │   ├── objetivos-do-produto.md
-   │   ├── proposta-de-valor.md
-   │   └── visao-do-produto.md
-   ├── 01-discovery/
-   │   ├── README.md
-   │   ├── glossario.md
-   │   ├── jornada-do-usuario.md
-   │   ├── personas.md
-   │   └── regras-de-negocio-iniciais.md
-   ├── 02-requirements/
-   │   ├── README.md
-   │   ├── historias-de-usuario.md
-   │   ├── requisitos-funcionais.md
-   │   └── requisitos-nao-funcionais.md
-   ├── 03-features/
-   │   ├── README.md
-   │   ├── content-management/
-   │   │   └── spec.md
-   │   ├── guided-workout/
-   │   │   └── spec.md
-   │   ├── progress-tracking/
-   │   │   └── spec.md
-   │   └── workout-catalog/
-   │       └── spec.md
-   ├── 04-diagrams/
-      ├── README.md
-      ├── ds-gym-house-context.drawio
-      ├── ds-gym-house-modules.drawio
-      └── ds-gym-house-user-journey.drawio
-   ├── 05-technical-specs/
-   │   ├── README.md
-   │   └── api-contracts-v1.md
-   
-   └── specs-templates/
-      ├── README.md
-      ├── 00-product-vision/
-      ├── 01-discovery/
-      ├── 02-requirements/
-      ├── 03-features/
-      └── 04-diagrams/
+    ├── README.md
+    ├── ROADMAP-DS-GYMHOUSE-NEXT.md
+    ├── 00-product-vision/
+    ├── 01-discovery/
+    ├── 02-requirements/
+    ├── 03-features/
+    ├── 04-diagrams/
+    ├── 05-technical-specs/
+    └── specs-templates/
 ```
 
-## Passo a passo da organização SDD
+## Organização SDD passo a passo
 
-### Passo 1 — Registrar o contexto do produto
+### 1. Registrar o contexto do produto
 
-Antes de escrever requisitos, começamos com uma visão clara do problema e da solução.
+Antes de escrever requisitos, foi criado um estudo de caso para definir cenário, atores, objetivos e escopo inicial.
 
-- O estudo de caso foi criado em `docs/case-study/estudo-de-caso.md`
-- Esse documento descreve o cenário, os atores, os objetivos e o escopo inicial do sistema
+### 2. Centralizar os artefatos em `specs/`
 
-### Passo 2 — Organizar a base de especificações
+A pasta `specs/` concentra toda a base do processo SDD:
 
-A pasta `specs/` foi criada para concentrar todos os artefatos do processo de **Spec-Driven Development**.
+- `00-product-vision/`: visão, proposta de valor, objetivos e premissas;
+- `01-discovery/`: personas, jornada, glossário e regras iniciais;
+- `02-requirements/`: requisitos funcionais, não funcionais e histórias;
+- `03-features/`: especificações por funcionalidade;
+- `04-diagrams/`: diagramas draw.io e imagens exportadas;
+- `05-technical-specs/`: contratos de API, OpenAPI e Postman;
+- `specs-templates/`: kit reutilizável para outros projetos.
 
-- `00-product-vision/`: visão do produto e proposta de valor
-- `01-discovery/`: descoberta do domínio, atores e regras iniciais
-- `02-requirements/`: requisitos funcionais, não funcionais e histórias de usuário
-- `03-features/`: especificações por funcionalidade
-- `04-diagrams/`: diagramas de apoio ao entendimento do sistema
+### 3. Separar as features principais
 
-### Passo 3 — Separar as funcionalidades principais
+As primeiras funcionalidades foram isoladas em subpastas para manter clareza e rastreabilidade:
 
-Para não misturar tudo em um único documento, as primeiras features foram divididas em subpastas próprias:
+- `workout-catalog`;
+- `guided-workout`;
+- `content-management`;
+- `progress-tracking`.
 
-- `workout-catalog`: catálogo e filtragem de treinos
-- `guided-workout`: execução do treino guiado
-- `content-management`: cadastro e publicação de conteúdos
-- `progress-tracking`: histórico e progresso do aluno
+Cada uma possui `spec.md` com fluxo principal, fluxos alternativos, validações, regras, critérios de aceitação e rastreabilidade.
 
-Cada uma dessas funcionalidades já possui um `spec.md` detalhado para servir de base à implementação e aos testes.
+### 4. Modelar visualmente o domínio
 
-### Passo 4 — Criar um diagrama simples do contexto
+Diagramas em draw.io foram criados para representar contexto, módulos, jornada do usuário e arquiteturas de referência.
 
-Também foi criado um diagrama em draw.io para representar, de forma visual e simples, a ideia central do sistema.
+### 5. Refinar para implementação técnica
 
-- Arquivo do diagrama: `specs/04-diagrams/ds-gym-house-context.drawio`
-- O diagrama mostra os atores principais, a plataforma e os blocos centrais de conteúdo e progresso
+Com a base funcional pronta, o projeto avançou para:
 
-### Passo 5 — Detalhar as especificações por funcionalidade
+- contratos de API em Markdown;
+- especificação OpenAPI v1;
+- coleção Postman;
+- plano de implementação por sprint;
+- backend Spring Boot inicial.
 
-As features principais foram refinadas com foco em uso real no processo SDD.
+### 6. Preparar a evolução do produto
 
-- atores envolvidos;
-- pré-condições;
-- regras de negócio;
-- fluxos principais e alternativos;
-- validações;
-- critérios de aceitação;
-- rastreabilidade com requisitos e histórias de usuário.
+O próximo ciclo natural segue a ordem:
 
-### Passo 6 — Preparar a evolução do projeto
+1. concluir a fundação do ambiente local;
+2. implementar autenticação e catálogo;
+3. evoluir execução de treino e progresso;
+4. concluir administração de conteúdo, qualidade e release.
 
-Com essa base, o próximo ciclo natural do SDD pode seguir esta ordem:
+## Artefatos principais
 
-1. modelar entidades e relações do domínio;
-2. definir contratos de API e payloads iniciais;
-3. escrever especificações técnicas por endpoint ou caso de uso;
-4. organizar backlog de implementação por feature;
-5. derivar testes a partir dos critérios de aceitação.
+### Produto e descoberta
 
-## Artefatos criados nesta etapa
+- estudo de caso: `docs/case-study/estudo-de-caso.md`
+- guia geral das specs: `specs/README.md`
+- visão do produto: `specs/00-product-vision/`
+- discovery: `specs/01-discovery/`
+- requisitos: `specs/02-requirements/`
 
-- Estudo de caso: `docs/case-study/estudo-de-caso.md`
-- Guia da estrutura SDD: `specs/README.md`
-- Product vision: `specs/00-product-vision/`
-- Discovery: `specs/01-discovery/`
-- Requirements: `specs/02-requirements/`
-- Features detalhadas: `specs/03-features/`
-- Diagramas draw.io: `specs/04-diagrams/`
-- Templates reutilizáveis: `specs/specs-templates/`
+### Features e diagramas
 
-## Diagramas exportados (PNG/JPG)
+- features detalhadas: `specs/03-features/`
+- diagramas draw.io e imagens: `specs/04-diagrams/`
+- roadmap complementar: `specs/ROADMAP-DS-GYMHOUSE-NEXT.md`
 
-Os diagramas também foram exportados para imagem em `specs/04-diagrams/`:
+### Especificações técnicas
 
-- Arquitetura (base): [PNG](specs/04-diagrams/ds-gym-house-architecture.png) | [JPG](specs/04-diagrams/ds-gym-house-architecture.jpg)
-- Arquitetura (produção): [PNG](specs/04-diagrams/ds-gym-house-architecture-production.png) | [JPG](specs/04-diagrams/ds-gym-house-architecture-production.jpg)
-- Contexto: [PNG](specs/04-diagrams/ds-gym-house-context.png) | [JPG](specs/04-diagrams/ds-gym-house-context.jpg)
-- Módulos: [PNG](specs/04-diagrams/ds-gym-house-modules.png) | [JPG](specs/04-diagrams/ds-gym-house-modules.jpg)
+- contratos de API: `specs/05-technical-specs/api-contracts-v1.md`
+- OpenAPI: `specs/05-technical-specs/openapi-v1.yaml`
+- Postman collection: `specs/05-technical-specs/postman-collection-v1.json`
+- Postman environment: `specs/05-technical-specs/postman-environment-local.json`
+
+### Implementação
+
+- plano executável: `TODO.md`
+- backend Spring Boot: `backend/`
+
+## Diagramas
+
+Os diagramas foram mantidos em formato fonte (`.drawio`) e também exportados em imagem (`.png` e `.jpg`).
+
+- Arquitetura base: [PNG](specs/04-diagrams/ds-gym-house-architecture.png) | [JPG](specs/04-diagrams/ds-gym-house-architecture.jpg)
+- Arquitetura de produção: [PNG](specs/04-diagrams/ds-gym-house-architecture-production.png) | [JPG](specs/04-diagrams/ds-gym-house-architecture-production.jpg)
+- Contexto do sistema: [PNG](specs/04-diagrams/ds-gym-house-context.png) | [JPG](specs/04-diagrams/ds-gym-house-context.jpg)
+- Módulos conceituais: [PNG](specs/04-diagrams/ds-gym-house-modules.png) | [JPG](specs/04-diagrams/ds-gym-house-modules.jpg)
 - Jornada do usuário: [PNG](specs/04-diagrams/ds-gym-house-user-journey.png) | [JPG](specs/04-diagrams/ds-gym-house-user-journey.jpg)
 
 ### Visualização dos diagramas
 
-#### Arquitetura (base)
+#### Arquitetura base
 
 ![Arquitetura base do DS Gym House](specs/04-diagrams/ds-gym-house-architecture.png)
 
-#### Arquitetura (produção)
+#### Arquitetura de produção
 
 ![Arquitetura de produção do DS Gym House](specs/04-diagrams/ds-gym-house-architecture-production.png)
 
@@ -264,27 +286,40 @@ Os diagramas também foram exportados para imagem em `specs/04-diagrams/`:
 
 ![Jornada do usuário do DS Gym House](specs/04-diagrams/ds-gym-house-user-journey.png)
 
-## Estado atual do projeto
+## Estado atual
 
-Neste momento, o projeto já possui uma base SDD consistente para seguir para modelagem técnica e implementação.
+Neste momento, o projeto já possui uma base sólida para sair da especificação e seguir para implementação incremental.
+
+### O que já está pronto
 
 - visão do produto definida;
 - estudo de caso documentado;
-- descoberta do domínio registrada;
+- discovery consolidado;
 - requisitos funcionais e não funcionais formalizados;
 - histórias de usuário com critérios de aceitação;
-- features detalhadas com regras e fluxos;
-- diagramas visuais de apoio.
+- features detalhadas com regras, fluxos e validações;
+- contratos de API, OpenAPI e coleção Postman;
+- backend Spring Boot inicializado;
+- testes unitários iniciais do backend adicionados;
+- diagramas técnicos e funcionais publicados.
 
-## Próximos passos sugeridos
+### O que ainda falta para a v1
 
-A partir daqui, os próximos passos mais naturais são:
+- inicializar o frontend;
+- configurar lint, formatter e scripts;
+- criar `.env.example`;
+- configurar Docker local;
+- implementar os fluxos principais da OpenAPI v1.
 
-- modelar entidades e agregados do domínio;
-- definir contratos de API e payloads iniciais;
-- escrever especificações técnicas por endpoint;
-- preparar backlog de implementação por feature;
-- derivar testes a partir dos critérios de aceitação.
+## Próximos passos
+
+Os próximos passos mais naturais a partir do estado atual são:
+
+1. concluir os itens pendentes da Sprint 0;
+2. implementar autenticação e catálogo de treinos;
+3. evoluir o fluxo de conclusão de treino e progresso;
+4. entregar a área administrativa de conteúdo;
+5. consolidar qualidade, CI/CD e release.
 
 ## Plano de implementação
 
