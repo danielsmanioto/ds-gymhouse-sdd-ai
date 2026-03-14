@@ -1,83 +1,85 @@
 # DS Gym House
 
-**DS Gym House** is a project created to demonstrate **Spec-Driven Development (SDD) in practice**.
+**DS Gym House** é um projeto criado para demonstrar o **Spec-Driven Development (SDD) na prática**.
 
-The goal of this repository is to explore how modern AI-assisted development workflows can be combined with **clear specifications, automation, and clean architecture** to build software more efficiently.
+O objetivo deste repositório é explorar como fluxos de desenvolvimento modernos assistidos por IA podem ser combinados com **especificações claras, automação e arquitetura limpa** para construir software de forma mais eficiente.
 
-This project serves both as a **learning platform** and a **reference implementation** for developers who want to understand how **AI agents and specification-first development** can work together in a real project.
-
----
-
-# What is Spec-Driven Development (SDD)?
-
-**Spec-Driven Development (SDD)** is a software development approach where **features are defined through specifications before implementation begins**.
-
-Instead of starting directly with code, developers first write a **clear specification describing the behavior, rules, and expected outcomes of a feature**.
-
-The specification becomes the **source of truth** for the system.
-
-In modern development workflows, SDD can be combined with **AI coding assistants and agents** to automatically generate parts of the implementation based on these specifications.
+Este projeto serve tanto como uma **plataforma de aprendizado** quanto como uma **implementação de referência** para desenvolvedores que desejam entender como **agentes de IA e desenvolvimento orientado por especificações** podem trabalhar juntos em um projeto real.
 
 ---
 
-# Core Principles of SDD
+# O que é Spec-Driven Development (SDD)?
 
-### 1. Specification First
-Features are described through specifications before any code is written.
+**Spec-Driven Development (SDD)** é uma abordagem de desenvolvimento de software em que as **funcionalidades são definidas por meio de especificações antes do início da implementação**.
 
-### 2. Clear Contracts
-Each feature defines:
+Em vez de começar diretamente pelo código, os desenvolvedores primeiro escrevem uma **especificação clara descrevendo o comportamento, as regras e os resultados esperados de uma funcionalidade**.
 
-- inputs
-- outputs
-- business rules
-- expected behavior
+A especificação se torna a **fonte única da verdade** do sistema.
 
-### 3. Automation Friendly
-Specifications can be used by:
-
-- AI agents
-- automated test generation
-- documentation tools
-
-### 4. Single Source of Truth
-The specification defines how the system should behave, helping maintain consistency between documentation, tests, and implementation.
+Nos fluxos modernos de desenvolvimento, o SDD pode ser combinado com **assistentes de código e agentes de IA** para gerar automaticamente partes da implementação com base nessas especificações.
 
 ---
 
-# Project Goals
+# Princípios Centrais do SDD
 
-The main goals of **DS Gym House** are:
+### 1. Especificação Primeiro
+As funcionalidades são descritas por meio de especificações antes que qualquer código seja escrito.
 
-- Demonstrate **Spec-Driven Development in practice**
-- Explore **AI-assisted development workflows**
-- Organize features using **clear specifications**
-- Maintain a **clean and scalable architecture**
-- Provide a **learning environment for experimentation**
+### 2. Contratos Claros
+Cada funcionalidade define:
+
+- entradas
+- saídas
+- regras de negócio
+- comportamento esperado
+
+### 3. Amigável à Automação
+As especificações podem ser usadas por:
+
+- agentes de IA
+- geração automatizada de testes
+- ferramentas de documentação
+
+### 4. Fonte Única da Verdade
+A especificação define como o sistema deve se comportar, ajudando a manter a consistência entre documentação, testes e implementação.
 
 ---
 
-# How SDD Works in This Project
+# Objetivos do Projeto
 
-The workflow used in this repository follows a **specification-first approach**:
+Os principais objetivos do **DS Gym House** são:
 
-1. A feature specification is created in the `specs/` folder.
-2. The specification describes:
-   - the feature
-   - the API behavior
-   - validation rules
-   - expected responses
-3. AI coding assistants can read the specification and help generate:
+- Demonstrar o **Spec-Driven Development na prática**
+- Explorar **fluxos de desenvolvimento assistidos por IA**
+- Organizar funcionalidades usando **especificações claras**
+- Manter uma **arquitetura limpa e escalável**
+- Oferecer um **ambiente de aprendizado para experimentação**
+
+---
+
+# Como o SDD Funciona Neste Projeto
+
+O fluxo utilizado neste repositório segue uma **abordagem orientada por especificação**:
+
+1. Uma especificação de funcionalidade é criada na pasta `specs/`.
+2. A especificação descreve:
+   - a funcionalidade
+   - o comportamento da API
+   - as regras de validação
+   - as respostas esperadas
+3. Assistentes de código com IA podem ler a especificação e ajudar a gerar:
    - controllers
    - services
    - repositories
-   - tests
-4. Developers review, refine, and evolve the implementation.
+   - testes
+4. Os desenvolvedores revisam, refinam e evoluem a implementação.
 
-This workflow encourages **better design, clearer communication, and faster iteration**.
+Esse fluxo incentiva **melhor design, comunicação mais clara e iteração mais rápida**.
 
 ---
 
-# Project Structure
+# Estrutura do Projeto
 
-The repository is organized to clearly separate **specifications, source code, and tests**.
+O repositório é organizado para separar claramente **especificações, código-fonte e testes**.
+
+```
