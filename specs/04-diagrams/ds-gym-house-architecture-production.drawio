@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" modified="2026-03-14T16:30:00.000Z" agent="GitHub Copilot" version="24.7.17">
+  <diagram id="ds-gym-house-architecture-production" name="Architecture Production">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="user" value="Usuário\nWeb/Mobile" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="170" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="frontend" value="Frontend\nReact + Vite (build estático)\nServido por Nginx/CDN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="260" width="250" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="gateway" value="API Gateway / Nginx\nTLS + Roteamento\nPorta: 443" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="260" width="240" height="120" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="backend" value="Backend\nSpring Boot (Java 25)\nPorta interna: 8080" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="250" width="250" height="130" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="db" value="PostgreSQL\nPorta: 5432" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="170" width="190" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="redis" value="Redis\nCache / Sessão\nPorta: 6379" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="300" width="190" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="queue" value="Fila (RabbitMQ/Kafka)\nAssíncrono / Eventos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1280" y="430" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="obs" value="Observabilidade\nActuator + Prometheus + Grafana" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d9ead3;strokeColor=#6aa84f;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="470" width="260" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="auth" value="Auth\nJWT + Refresh Token" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#3d85c6;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="130" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#82b366;" edge="1" parent="1" source="user" target="frontend">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e2" value="API Calls" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#6c8ebf;" edge="1" parent="1" source="frontend" target="gateway">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e3" value="Roteamento /api/v1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#d6b656;" edge="1" parent="1" source="gateway" target="backend">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e4" value="JPA/JDBC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#b85450;" edge="1" parent="1" source="backend" target="db">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e5" value="Cache" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#d79b00;" edge="1" parent="1" source="backend" target="redis">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e6" value="Publish / Consume" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#9673a6;" edge="1" parent="1" source="backend" target="queue">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e7" value="Métricas" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#6aa84f;dashed=1;" edge="1" parent="1" source="backend" target="obs">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e8" value="Tokens" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;strokeColor=#3d85c6;dashed=1;" edge="1" parent="1" source="backend" target="auth">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

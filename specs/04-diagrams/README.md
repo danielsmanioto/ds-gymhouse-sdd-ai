@@ -15,6 +15,8 @@ Esta etapa concentra diagramas de apoio ao entendimento do sistema.
 - `ds-gym-house-context.drawio`
 - `ds-gym-house-user-journey.drawio`
 - `ds-gym-house-modules.drawio`
+- `ds-gym-house-architecture.drawio`
+- `ds-gym-house-architecture-production.drawio`
 
 ## Objetivo da etapa
 
