@@ -18,12 +18,39 @@ Preparar a base de código e ambiente para desenvolvimento.
 
 ### Entregas
 
-- [ ] Definir stack oficial (backend, frontend, banco)
+- [x] Definir stack oficial (backend, frontend, banco)
 - [ ] Inicializar projeto backend
 - [ ] Inicializar projeto frontend
 - [ ] Configurar lint, formatter e scripts
 - [ ] Criar `.env.example`
 - [ ] Configurar Docker local (app + banco)
+
+### Definição de stack (em andamento)
+
+Status: ✅ concluído
+
+#### Decisões a confirmar
+
+- Backend: [x] Java + Spring Boot | [ ] Outro: _______
+- Frontend: [ ] Next.js | [x] React + Vite | [ ] Outro: _______
+- Banco: [x] PostgreSQL | [ ] MySQL | [ ] Outro: _______
+- ORM (Java): [x] Spring Data JPA (Hibernate) | [ ] jOOQ | [ ] MyBatis | [ ] Outro: _______
+- Auth: [x] JWT + Refresh Token | [ ] Provedor externo | [ ] Outro: _______
+
+#### Stack já definida (parcial)
+
+- Backend: Java + Spring Boot
+- Frontend: React + Vite
+- Banco: PostgreSQL
+- ORM: Spring Data JPA (Hibernate)
+- Auth: JWT + Refresh Token
+
+#### Critérios para escolher
+
+- velocidade de desenvolvimento
+- curva de aprendizado do time
+- facilidade de deploy
+- aderência ao OpenAPI já definido
 
 ### Critério de pronto
 
