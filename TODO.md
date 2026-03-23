@@ -72,9 +72,9 @@ Entregar fluxo inicial de acesso e descoberta de treinos.
 
 ### Backend
 
-- [ ] Implementar entidade `User`
-- [ ] Implementar `POST /auth/register`
-- [ ] Implementar `POST /auth/login`
+- [x] Implementar entidade `User`
+- [x] Implementar `POST /auth/register`
+- [x] Implementar `POST /auth/login`
 - [ ] Implementar entidade `Workout`
 - [ ] Implementar `GET /workouts`
 - [ ] Implementar `GET /workouts/{workoutId}`
@@ -88,7 +88,7 @@ Entregar fluxo inicial de acesso e descoberta de treinos.
 
 ### Testes
 
-- [ ] Unitários de auth
+- [x] Unitários de auth
 - [ ] Integração de auth e catálogo
 - [ ] Validar requests no Postman
 
@@ -186,6 +186,15 @@ Consolidar estabilidade e preparar deploy.
 - [ ] Adicionar testes negativos na coleção Postman
 - [ ] Gerar coleção de exemplos de erro por endpoint
 - [ ] Definir estratégia de seed de dados para ambiente local
+
+---
+
+## Notas de progresso (atualizado)
+
+- Auth básico implementado no backend: entidade `User`, endpoints `POST /auth/register` e `POST /auth/login`.
+- Testes unitários para `AuthController` adicionados e passando (`AuthControllerTest`).
+- Branch criada e empurrada: `feature/auth-tests` (push feito). Se quiser, posso abrir o PR ou você já criou/mesclou para `main`.
+
 
 ---
 
