@@ -1,0 +1,61 @@
+name: Auto PR feature -> main
+
+on:
+  push:
+    branches:
+      - feature*
+      - feature/**
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  open-pr-to-main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create PR when missing
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const branch = context.ref.replace('refs/heads/', '');
+            const base = 'main';
+
+            if (branch === base) {
+              core.info('Branch is main; skipping.');
+              return;
+            }
+
+            const { data: pulls } = await github.rest.pulls.list({
+              owner,
+              repo,
+              state: 'open',
+              base,
+              head: `${owner}:${branch}`,
+              per_page: 1
+            });
+
+            if (pulls.length > 0) {
+              core.info(`PR already exists: #${pulls[0].number}`);
+              return;
+            }
+
+            const { data: pr } = await github.rest.pulls.create({
+              owner,
+              repo,
+              title: `feat: merge ${branch} into ${base}`,
+              head: branch,
+              base,
+              body: [
+                'PR criado automaticamente pelo workflow de push em branch feature.',
+                '',
+                `- Source: ${branch}`,
+                `- Target: ${base}`
+              ].join('\n')
+            });
+
+            core.info(`Created PR #${pr.number}: ${pr.html_url}`);

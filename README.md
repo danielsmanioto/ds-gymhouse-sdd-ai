@@ -30,6 +30,7 @@ O projeto funciona ao mesmo tempo como:
 - [Organização SDD passo a passo](#organização-sdd-passo-a-passo)
 - [Artefatos principais](#artefatos-principais)
 - [Diagramas](#diagramas)
+- [CI/CD](#cicd)
 - [Estado atual](#estado-atual)
 - [Próximos passos](#próximos-passos)
 - [Plano de implementação](#plano-de-implementação)
@@ -285,6 +286,23 @@ Os diagramas foram mantidos em formato fonte (`.drawio`) e também exportados em
 #### Jornada do usuário
 
 ![Jornada do usuário do DS Gym House](specs/04-diagrams/ds-gym-house-user-journey.png)
+
+## CI/CD
+
+### Diagrama — Auto PR (`feature*` -> `main`)
+
+```mermaid
+flowchart TD
+    A[Dev faz push em branch feature*] --> B[GitHub Actions: feature-auto-pr-to-main.yml]
+    B --> C{Já existe PR aberto para main?}
+    C -- Sim --> D[Encerrar job sem criar PR]
+    C -- Não --> E[Criar PR automático: feature -> main]
+    E --> F[PR disponível para revisão]
+```
+
+Referências:
+- Prompt NFR: [specs/06-requisitos-nao-funcionais-uteis/prompt-auto-pr-feature-main.md](specs/06-requisitos-nao-funcionais-uteis/prompt-auto-pr-feature-main.md)
+- Workflow: [.github/workflows/feature-auto-pr-to-main.yml](.github/workflows/feature-auto-pr-to-main.yml)
 
 ## Estado atual
 
