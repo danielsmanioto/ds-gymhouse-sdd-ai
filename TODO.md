@@ -75,10 +75,10 @@ Entregar fluxo inicial de acesso e descoberta de treinos.
 - [x] Implementar entidade `User`
 - [x] Implementar `POST /auth/register`
 - [x] Implementar `POST /auth/login`
-- [ ] Implementar entidade `Workout`
-- [ ] Implementar `GET /workouts`
-- [ ] Implementar `GET /workouts/{workoutId}`
-- [ ] Implementar paginação e filtros
+- [x] Implementar entidade `Workout`
+- [x] Implementar `GET /workouts`
+- [x] Implementar `GET /workouts/{workoutId}`
+- [x] Implementar paginação e filtros
 
 ### Frontend
 
@@ -89,7 +89,7 @@ Entregar fluxo inicial de acesso e descoberta de treinos.
 ### Testes
 
 - [x] Unitários de auth
-- [ ] Integração de auth e catálogo
+- [x] Integração de auth e catálogo
 - [ ] Validar requests no Postman
 
 ### Critério de pronto
@@ -193,6 +193,9 @@ Consolidar estabilidade e preparar deploy.
 
 - Auth básico implementado no backend: entidade `User`, endpoints `POST /auth/register` e `POST /auth/login`.
 - Testes unitários para `AuthController` adicionados e passando (`AuthControllerTest`).
+- Catálogo inicial implementado no backend: entidade `Workout`, endpoint `GET /workouts` com paginação/filtros e endpoint `GET /workouts/{workoutId}`.
+- Testes WebMvc para catálogo adicionados (`WorkoutControllerTest`).
+- Teste de integração do fluxo Sprint 1 (registrar, logar e listar catálogo) adicionado (`AuthCatalogIntegrationTest`).
 - Branch criada e empurrada: `feature/auth-tests` (push feito). Se quiser, posso abrir o PR ou você já criou/mesclou para `main`.
 
 

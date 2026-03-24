@@ -1,4 +1,4 @@
-﻿# PRD (Product Requirements Document) — DS Gym House (resumo)
+﻿﻿# PRD (Product Requirements Document) — DS Gym House (resumo)
 
 Visão geral
 --
