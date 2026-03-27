@@ -18,23 +18,20 @@ Preparar a base de código e ambiente para desenvolvimento.
 
 ### Entregas
 
-- [x] Definir stack oficial (backend, frontend, banco)
-- [x] Inicializar projeto backend
-- [ ] Inicializar projeto frontend
-- [ ] Configurar lint, formatter e scripts
-- [ ] Criar `.env.example`
+- [x] Inicializar projeto frontend
+- [x] Configurar lint, formatter e scripts
+- [x] Criar `.env.example`
 - [ ] Configurar Docker local (app + banco)
 
 ### Definição de stack (em andamento)
 
-Status: ✅ concluído
-
 #### Decisões a confirmar
 
 - Backend: [x] Java + Spring Boot | [ ] Outro: _______
-- Frontend: [ ] Next.js | [x] React + Vite | [ ] Outro: _______
-- Banco: [x] PostgreSQL | [ ] MySQL | [ ] Outro: _______
-- ORM (Java): [x] Spring Data JPA (Hibernate) | [ ] jOOQ | [ ] MyBatis | [ ] Outro: _______
+- [x] Frontend: Setup React + Vite com estrutura de pastas
+- [x] Frontend: Rotas com React Router
+- [x] Frontend: Autenticação com Context API
+- [x] Frontend: Services de API com Axios
 - Auth: [x] JWT + Refresh Token | [ ] Provedor externo | [ ] Outro: _______
 
 #### Stack já definida (parcial)
@@ -82,9 +79,9 @@ Entregar fluxo inicial de acesso e descoberta de treinos.
 
 ### Frontend
 
-- [ ] Tela de cadastro/login
-- [ ] Tela de catálogo com filtros
-- [ ] Tela de detalhe do treino
+- [x] Tela de cadastro/login
+- [x] Tela de catálogo com filtros
+- [x] Tela de detalhe do treino
 
 ### Testes
 
